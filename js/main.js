@@ -41,21 +41,21 @@
       var y = ad.location.y;
 
       if (x > maxLeft
-        || x < pinWidth
-        || y < minY
-        || y > maxY) {
+          || x < pinWidth
+          || y < minY
+          || y > maxY) {
 
         return false;
       }
 
       return true;
     })
-      .filter(function (ad) {
-        if (ad.offer) {
-          return true;
-        }
-        return false;
-      });
+    .filter(function (ad) {
+      if (ad.offer) {
+        return true;
+      }
+      return false;
+    });
 
     return adsCopy;
   };
