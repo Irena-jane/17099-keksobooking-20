@@ -8,7 +8,7 @@
 
   var xhr = new XMLHttpRequest();
 
-  var url = 'https://js.dump.academy/keksobooking/data';
+  var url = 'https://javascript.pages.academy/keksobooking/data';
   xhr.responseType = 'json';
   xhr.open('GET', url);
 
