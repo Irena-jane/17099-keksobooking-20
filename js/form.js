@@ -253,7 +253,16 @@
     document.addEventListener('click', removePopup);
   }
   function onError() {
-    document.querySelector('#error');
+    var template = document.querySelector('#error')
+      .content.querySelector('.error');
+    var popup = template.cloneNode(true);
+    var main = document.querySelector('main');
+    main.appendChild(popup);
+    var removePopup = function () {
+      main.removeChild(popup);
+      document.removeEventListener(removePopup);
+    };
+    document.addEventListener('click', removePopup);
   }
 
 })();
