@@ -65,6 +65,9 @@
 
 
   var mapPinsActivate = function () {
+    if (!window.appdata) {
+      return;
+    }
     if (isActivated) {
       return;
     }

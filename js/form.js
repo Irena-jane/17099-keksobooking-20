@@ -235,9 +235,25 @@
     });
 
     if (form.checkValidity()) {
-      form.submit();
+      window.upload(new FormData(form), onSuccess, onError);
     }
 
   });
+  function onSuccess() {
+    window.page.setPageDisabled();
+    var template = document.querySelector('#success')
+      .content.querySelector('.success');
+    var popup = template.cloneNode(true);
+    var main = document.querySelector('main');
+    main.appendChild(popup);
+    var removePopup = function () {
+      main.removeChild(popup);
+      document.removeEventListener(removePopup);
+    };
+    document.addEventListener('click', removePopup);
+  }
+  function onError() {
+    document.querySelector('#error');
+  }
 
 })();
